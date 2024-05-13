@@ -21,13 +21,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
-//Displayy data from DB in the frontend list
+// Display data from DB in the frontend list
 function displayVehicles(vehicles) {
     const vehicleList = document.getElementById('vehicle-list');
     vehicles.forEach(vehicle => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `ID: ${vehicle.id_vehiculo}, Brand: ${vehicle.marca}, Model: ${vehicle.modelo}, Year: ${vehicle.año}, Price: ${vehicle.precio}`;
-        vehicleList.appendChild(listItem);
+        const divContainer = document.createElement('div');
+        divContainer.classList.add('cont_auto');
+
+        const img = document.createElement('img');
+        img.classList.add('foto');
+        img.src = vehicle.imagen;
+
+        const h2 = document.createElement('h2');
+        h2.textContent = `${vehicle.marca} ${vehicle.modelo} ${vehicle.año}`;
+
+        const p = document.createElement('p');
+        p.textContent = `$${vehicle.precio}`;
+
+        divContainer.appendChild(img);
+        divContainer.appendChild(document.createElement('br'));
+        divContainer.appendChild(document.createElement('br'));
+        divContainer.appendChild(h2);
+        divContainer.appendChild(document.createElement('br'));
+        divContainer.appendChild(p);
+
+        vehicleList.appendChild(divContainer);
     });
 }
 
@@ -136,7 +154,7 @@ formDelete.addEventListener("submit", (event) => {
     event.preventDefault();
     
     //Get the values by them ids
-    let id = document.getElementById("id").value;
+    let id = document.getElementById("id_vehicle").value;
 
     fetch(`http://localhost:4000/api/vehicles/${id}`, {
         method: 'DELETE'

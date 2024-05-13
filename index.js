@@ -155,7 +155,7 @@ app.get('/api/users/:id', (req, res) => {
     });
 })
 
-//Create a new vehicle by using post method
+//Create a new user by using post method
 app.post('/api/users', (req, res) => {
     const { usuario, pswd } = req.body;
 
