@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehiculos</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script_vehicles.js"></script>
+    
 </head>
 <body class="bod">
     <?php
@@ -21,8 +21,54 @@
     </div>
     <br><br><br><br><br><br>
 
-    <h1>Lista de Vehículos</h1>
-    <ul id="vehicle-complete-list"></ul>
+    <div class="vehiculos_admin">
+        <h1>Lista de Vehículos</h1>
+        <ul id="vehicle-complete-list"></ul>    
+    </div>
+
+    <div class="nuevo_vehiculo">
+        <h1>EDITAR VEHICULO</h1>
+        <form class="form_vehiculo" id="editVehicle">
+            
+            <label for="id">ID:</label>
+            <input id="id" name="id" type="text" maxlength="4">
+            <br><br><br>
+
+            <label for="field">Campo:</label>
+            <select name="field" id="field">
+                <option value="marca">Marca</option>
+                <option value="modelo">Modelo</option>
+                <option value="año">Año</option>
+                <option value="precio">Precio</option>
+                <option value="descripcion">Descripción</option>
+            </select>
+            <br><br><br>
+
+            <label for="value">Valor:</label>
+            <input id="value" name="value" type="text" maxlength="50">
+            <br><br><br>
+            
+            <button class="btn_guard_vehiculo">EDITAR VEHICULO</button>
+        </form>
+    </div>
+    <br><br><br><br><br><br>
+
+    <div class="nuevo_vehiculo">
+        <h1>REEMPLAZAR IMAGEN DE VEHICULO</h1>
+        <form class="form_vehiculo" id="editVehicleImage">
+            
+            <label for="id">ID:</label>
+            <input id="idImg" name="idImg" type="text" maxlength="4">
+            <br><br><br>
+
+            <label for="image">Imagen:</label>
+            <input id="image" name="image" type="file">
+            <br><br><br>
+            
+            <button class="btn_guard_vehiculo">REEMPLAZAR IMAGEN</button>
+        </form>
+    </div>
+    <br><br><br><br><br><br>
     
     <div class="nuevo_vehiculo">
         <h1>NUEVO VEHICULO</h1>
@@ -53,6 +99,9 @@
         </form>
     </div>
     <br><br><br><br><br><br>
+
+    <script src="script_vehicles.js"></script>
+
 
     <?php 
         include("footer.php");

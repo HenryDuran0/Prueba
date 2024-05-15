@@ -206,7 +206,6 @@
     border-right: 1px white solid;
 }
 
-
 /* Footer */
 
 .cont6 {
@@ -484,6 +483,13 @@
     position: absolute;
 }
 
+.form_vehiculo select {
+    width: 270px;
+    height: 30px;
+    margin-left: 115px;
+    position: absolute;
+}
+
 .btn_guard_vehiculo {
     background-color: #135D66;
     color: white;
@@ -492,6 +498,16 @@
     font-size: 1.3em;
     width: 200px;
     height: 40px;
+}
+
+/* Desplegar Vehiculos (admin view) */
+
+.vehiculos_admin {
+    margin: auto;
+    text-align: center;
+    background-color: #003C43;
+    color: white;
+    width: 1000px;
 }
 
 /* Nosotros */
